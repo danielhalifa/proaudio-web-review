@@ -1,0 +1,565 @@
+/* ProAudio dark system: neutral surfaces are black; programme accents stay expressive. */
+:root {
+  color-scheme: dark;
+  --paper: #070808;
+  --paper-2: #101111;
+  --ink: #f4f0e8;
+  --muted: #a9aaa4;
+  --line: rgba(244, 240, 232, .18);
+  --ableton-paper: #070808;
+  --ableton-paper-2: #101111;
+  --ableton-border: rgba(244, 240, 232, .18);
+  --black-panel: #090a0a;
+  --cream-line: rgba(244, 240, 232, .2);
+  --text-on-dark: #f4f0e8;
+  --text-soft: rgba(244, 240, 232, .72);
+  --dark-surface: #0d0f0f;
+  --dark-card: #121414;
+  --dark-elevated: #181a1a;
+}
+
+html, body, main { background: var(--paper) !important; color: var(--ink); }
+body[data-page="legal"] { background: var(--paper) !important; }
+body p, body .text-large, body .label, body .section-number, body .form-note { color: var(--muted); }
+::selection { background: var(--ableton-purple, #7653ff); color: #fff; }
+input::placeholder, textarea::placeholder { color: rgba(244, 240, 232, .52); }
+
+main > .section, main > .page-hero, main > .cta, .section, .page-hero, .cta,
+.partners, .live-preview, .live-intro, .path, .testimonials, .news-home,
+.news-index-section, .news-subscribe, .school-bento, .team-bento,
+.profesorado-home, .faculty, .escuela-video, .closing-section {
+  background-color: var(--paper) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+.site-header, .site-header .nav, .site-subnav, .topbar, .footer,
+.footer.static-footer, .reference-footer-surface {
+  background: var(--black-panel) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+.site-header, .site-header a, .site-header .brand, .topbar, .topbar a { color: var(--ink) !important; }
+.site-header .brand img { filter: brightness(0) invert(1) !important; }
+.brand img,
+.reference-footer-logo img,
+.footer .brand img {
+  filter: brightness(0) invert(1) !important;
+}
+.brand small, .topbar .label, .site-header .label { color: var(--muted) !important; }
+.nav-cta, .button.light { background: var(--ink) !important; color: var(--paper) !important; border-color: var(--ink) !important; }
+.nav-cta:hover, .button.light:hover { background: var(--ableton-purple-dark, #5b3fd1) !important; color: #fff !important; border-color: var(--ableton-purple-dark, #5b3fd1) !important; }
+.menu-toggle { color: var(--ink) !important; border-color: var(--line) !important; }
+
+.hero, .hero-media, .hero-media .video-frame, .live-page-hero,
+body[data-page="live"] .page-hero, .legal-hero { background-color: #020303 !important; color: var(--ink) !important; }
+.hero h1, .hero .eyebrow, .hero .hero-caption-title, .hero-sub,
+.page-hero h1, .page-hero .eyebrow, .cta h2, .cta .eyebrow { color: var(--ink) !important; }
+
+.course-card, .journal-card, .article-card, .quote, .step, .faculty-bento-card,
+.news-card, .live-frame, .info-panel, .split-art, .article-reader,
+.detail-modal-panel, .cookie-preferences-panel {
+  background: var(--dark-card) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+.course-card p, .journal-card p, .article-card p, .quote cite, .step p,
+.faculty-bento-card p, .news-card p, .info-panel p { color: var(--muted) !important; }
+.course-card:hover, .journal-card:hover, .article-card:hover, .news-card:hover { background: var(--dark-elevated) !important; color: var(--ink) !important; }
+
+.partner-logo-grid a { background: var(--dark-surface) !important; border-color: var(--line) !important; }
+.partner-logo-grid a:hover { background: var(--dark-elevated) !important; }
+.partner-logo-grid img { filter: grayscale(1) invert(1); opacity: .88; }
+.partner-logo-grid img,
+.tech-logo img {
+  filter: brightness(0) invert(1) !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+}
+
+body[data-page="index"] .testimonials,
+body[data-page="index"] .team-bento { background: var(--paper) !important; }
+body[data-page="escuela"] main > .escuela-video { background: var(--paper) !important; color: var(--ink) !important; }
+.studio-meter { background: var(--ableton-green, #b6ffc0) !important; }
+
+.field input, .field textarea, .field select, .reference-footer-newsletter input {
+  background: var(--dark-surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+.field input:focus, .field textarea:focus, .field select:focus,
+.reference-footer-newsletter input:focus { outline: 2px solid var(--ableton-purple, #7653ff); outline-offset: 2px; border-color: var(--ableton-purple, #7653ff) !important; }
+.success-message { background: var(--ableton-green, #b6ffc0) !important; color: #08100a !important; }
+.detail-modal, .article-modal { background: rgba(0, 0, 0, .84) !important; }
+.detail-modal-close, .article-reader-close { background: var(--dark-elevated) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+.detail-modal-close:hover, .article-reader-close:hover { background: var(--ableton-purple, #7653ff) !important; color: #fff !important; }
+.cookie-banner { background: var(--dark-elevated) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+
+.footer p, .footer .label, .footer-bottom, .reference-footer-note,
+.reference-footer-address, .reference-footer-column a { color: var(--text-soft) !important; }
+.footer h3, .footer .brand, .footer .footer-links a, .footer .footer-links span,
+.reference-footer-column h3 { color: var(--ink) !important; }
+.footer-links a:hover, .reference-footer-column a:hover { color: var(--ableton-green, #b6ffc0) !important; }
+.footer-contact-link { background: var(--ink) !important; color: var(--paper) !important; }
+.footer-contact-link span { color: var(--paper) !important; }
+
+/* Keep intended chromatic content blocks with contrast-safe foregrounds. */
+body[data-page="index"] #cursos .course-card:nth-child(4), body[data-page="escuela"] .path .step:nth-child(3),
+body[data-page="index"] .testimonials .quote:nth-child(3), body[data-page="profesorado"] .quote:nth-child(1),
+body[data-page="profesorado"] .quote:nth-child(2), body[data-page="profesorado"] .quote:nth-child(3),
+body[data-page="profesorado"] .quote:nth-child(4), body[data-page="blog"] #eventos .course-card:nth-child(1),
+body[data-page="blog"] #eventos .course-card:nth-child(2), body[data-page="blog"] #eventos .course-card:nth-child(3),
+body[data-page="escuela"] .feature-row:nth-child(1), body[data-page="escuela"] .feature-row:nth-child(2),
+body[data-page="escuela"] .feature-row:nth-child(3), body[data-page="index"] #escuela-home .feature-row:nth-child(1),
+body[data-page="index"] #escuela-home .feature-row:nth-child(2), body[data-page="index"] #escuela-home .feature-row:nth-child(3),
+body[data-page="curso"] .course-accordion-item:nth-child(2), body[data-page="curso"] .course-accordion-item:nth-child(3),
+body[data-page="curso"] .course-accordion-item:nth-child(4) { color: #101010 !important; }
+
+body[data-page="index"] #cursos .course-card:nth-child(4), body[data-page="escuela"] .path .step:nth-child(3),
+body[data-page="index"] .testimonials .quote:nth-child(3), body[data-page="profesorado"] .quote:nth-child(3),
+body[data-page="blog"] #eventos .course-card:nth-child(3), body[data-page="escuela"] .feature-row:nth-child(3),
+body[data-page="index"] #escuela-home .feature-row:nth-child(3), body[data-page="curso"] .course-accordion-item:nth-child(4) { color: #fff !important; }
+
+body[data-page="profesorado"] .quote blockquote, body[data-page="profesorado"] .quote cite,
+body[data-page="blog"] #eventos .course-card h3, body[data-page="blog"] #eventos .course-card p,
+body[data-page="blog"] #eventos .course-card .label, body[data-page="curso"] .course-accordion-item:nth-child(2) p,
+body[data-page="curso"] .course-accordion-item:nth-child(3) p, body[data-page="curso"] .course-accordion-item:nth-child(4) p { color: inherit !important; }
+
+summary::after { color: var(--ink); }
+@media (max-width: 1100px) {
+  .site-header .nav, .site-header .nav.open { background: var(--black-panel) !important; }
+  .site-header .nav-link { border-bottom-color: var(--line) !important; color: var(--ink) !important; }
+}
+
+/* Final contrast pass: old editorial rules used near-black text on the new dark surfaces. */
+html body[data-page] main > section :is(h1, h2, h3, h4, p, .text-large, blockquote, cite, strong, .blur-word, summary) {
+  color: var(--ink) !important;
+}
+html body[data-page] main > section :is(p, .text-large, cite) { color: var(--text-soft) !important; }
+
+/* These blocks intentionally keep their accent fills, so inherit their own contrast-safe ink. */
+html body[data-page="index"] .testimonials .quote,
+html body[data-page="profesorado"] .quote,
+html body[data-page="escuela"] .path .step,
+html body[data-page="curso"] .course-accordion-item,
+html body[data-page="blog"] #eventos .course-card,
+html body[data-page="escuela"] .feature-row,
+html body[data-page="index"] #escuela-home .feature-row { color: inherit !important; }
+html body[data-page="index"] .testimonials .quote :is(blockquote, cite),
+html body[data-page="profesorado"] .quote :is(blockquote, cite),
+html body[data-page="escuela"] .path .step :is(h3, p, .step-num),
+html body[data-page="curso"] .course-accordion-item :is(h3, p, .course-accordion-summary, .course-accordion-label),
+html body[data-page="escuela"] .feature-row :is(strong, p, .label),
+html body[data-page="index"] #escuela-home .feature-row :is(strong, p, .label) { color: inherit !important; }
+
+.info-panel :is(h3, p, li, li span, li strong) { color: var(--ink) !important; }
+.info-panel p, .info-panel li span { color: var(--text-soft) !important; }
+html body[data-page="curso"] .info-panel :is(h3, p, li, li span, li strong, .label, .blur-word) {
+  color: #101010 !important;
+}
+.tech-ticker-label { color: var(--ink) !important; }
+
+.reference-footer,
+.reference-footer :is(h2, h3, p, a, span, address, label, small) { color: var(--ink) !important; }
+.reference-footer :is(.reference-footer-note, .reference-footer-address, .reference-footer-column a, .reference-footer-newsletter p, .footer-form-status) { color: var(--text-soft) !important; }
+.reference-footer-newsletter input { color: var(--ink) !important; }
+.reference-footer-newsletter input::placeholder { color: rgba(244, 240, 232, .52) !important; }
+
+.legal-copy :is(h2, h3, p, li, strong),
+.legal-aside a { color: var(--text-soft) !important; }
+.legal-copy :is(h2, h3), .legal-aside a { color: var(--ink) !important; }
+.form-privacy { color: var(--text-soft) !important; }
+
+.cookie-preferences-panel :is(h2, h3, p, span, label, strong) { color: var(--ink) !important; }
+.cookie-preferences-panel :is(p, .cookie-option span) { color: var(--text-soft) !important; }
+.cookie-close, .cookie-actions .secondary, .cookie-banner .cookie-button.secondary {
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+/* Specific legacy selectors that still outrank the general dark pass. */
+html body[data-page="index"] main > .path:not(:has(.journal-grid)) .section-head :is(p, .text-large),
+html body[data-page="escuela"] .path .section-head h2,
+html body[data-page="index"] .team-bento .team-filet span { color: var(--text-soft) !important; }
+html body[data-page="index"] .school-bento .feature-row :is(.label, strong, p, .detail-trigger-action) { color: var(--ink) !important; }
+
+/* Chromatic cards use dark ink consistently for stronger contrast. */
+html body[data-page="index"] #cursos .course-card:nth-child(4),
+html body[data-page="index"] main > .path .step,
+html body[data-page="index"] .testimonials .quote,
+html body[data-page="index"] #escuela-home .feature-row,
+html body[data-page="index"] .school-bento .feature-row,
+html body[data-page="escuela"] .path .step,
+html body[data-page="escuela"] .feature-row,
+html body[data-page="profesorado"] .quote,
+html body[data-page="curso"] .course-accordion-item,
+html body[data-page="blog"] #eventos .course-card,
+html body[data-page="blog"] .article-card-green,
+html body[data-page="blog"] .article-card-purple,
+html body[data-page="blog"] .article-card-orange,
+html body[data-page="blog"] .article-card-light {
+  color: #101010 !important;
+}
+
+html body[data-page="index"] #cursos .course-card:nth-child(4) :is(h3, p, a, span, strong, .label, .arrow-icon),
+html body[data-page="index"] main > .path .step :is(h3, p, a, span, strong, .step-num, .detail-trigger-action),
+html body[data-page="index"] .testimonials .quote :is(blockquote, cite, a, span),
+html body[data-page="index"] #escuela-home .feature-row :is(strong, p, span, a),
+html body[data-page="index"] .school-bento .feature-row :is(strong, p, span, a),
+html body[data-page="escuela"] .path .step :is(h3, p, a, span, strong, .step-num, .detail-trigger-action),
+html body[data-page="escuela"] .feature-row :is(strong, p, span, a),
+html body[data-page="profesorado"] .quote :is(blockquote, cite, a, span),
+html body[data-page="curso"] .course-accordion-item :is(h3, p, a, span, strong, small, button, summary, .course-accordion-label, .course-accordion-summary, .course-accordion-control),
+html body[data-page="blog"] #eventos .course-card :is(h3, p, a, span, strong, .label, .arrow-icon),
+html body[data-page="blog"] :is(.article-card-green, .article-card-purple, .article-card-orange, .article-card-light) :is(h2, h3, p, a, span, strong, .label, .article-open) {
+  color: #101010 !important;
+}
+
+/* Keep the dark-ink rule ahead of legacy purple exceptions. */
+html body[data-page="index"] .testimonials .quote:nth-child(3),
+html body[data-page="index"] .testimonials .quote:nth-child(3) :is(blockquote, cite, a, span),
+html body[data-page="index"] .school-bento .feature-row:nth-child(3),
+html body[data-page="index"] .school-bento .feature-row:nth-child(3) :is(span, strong, p, a, button),
+html body[data-page="index"] #cursos .course-card:nth-child(-n+5) :is(h3, p, a, span, strong, .label, .arrow-icon),
+html body[data-page="index"] #escuela-home .feature-row:nth-child(3),
+html body[data-page="index"] #escuela-home .feature-row:nth-child(3) :is(span, strong, p, a, button),
+html body[data-page="escuela"] .feature-row:nth-child(1),
+html body[data-page="escuela"] .feature-row:nth-child(2),
+html body[data-page="escuela"] .feature-row:nth-child(3),
+html body[data-page="escuela"] .feature-row:nth-child(1) :is(span, strong, p, a, button),
+html body[data-page="escuela"] .feature-row:nth-child(2) :is(span, strong, p, a, button),
+html body[data-page="escuela"] .feature-row:nth-child(3) :is(span, strong, p, a, button),
+html body[data-page="profesorado"] .quote:nth-child(1),
+html body[data-page="profesorado"] .quote:nth-child(2),
+html body[data-page="profesorado"] .quote:nth-child(3),
+html body[data-page="profesorado"] .quote:nth-child(4),
+html body[data-page="profesorado"] .quote:nth-child(1) :is(blockquote, cite, a, span),
+html body[data-page="profesorado"] .quote:nth-child(2) :is(blockquote, cite, a, span),
+html body[data-page="profesorado"] .quote:nth-child(3) :is(blockquote, cite, a, span),
+html body[data-page="profesorado"] .quote:nth-child(4) :is(blockquote, cite, a, span) {
+  color: #101010 !important;
+}
+
+html body[data-page] .faculty-bento-card:nth-child(n+2) .faculty-bento-copy,
+html body[data-page] .faculty-bento-card:nth-child(n+2) .faculty-bento-copy :is(h3, p, span, a, strong),
+html body[data-page] .button.secondary,
+html body[data-page] .button.secondary:hover,
+html body[data-page] .button.secondary :is(span, strong, .arrow),
+html body[data-page] .button.secondary:hover :is(span, strong, .arrow),
+html body[data-page] .nav-cta,
+html body[data-page] .nav-cta:hover,
+html body[data-page] .reference-footer-newsletter form button,
+html body[data-page="cookies"] .legal-aside button,
+html body[data-page="contacto"] .success-message {
+  color: #101010 !important;
+}
+
+html body[data-page="escuela"] .path .step:nth-child(3),
+html body[data-page="escuela"] .path .step:nth-child(3) :is(h3, p, span, a, strong, button, .step-num, .detail-trigger-action) {
+  color: #101010 !important;
+}
+
+/* Dark reader for the school detail popups. */
+html body .detail-modal-backdrop {
+  background: rgba(0, 0, 0, .86) !important;
+  backdrop-filter: blur(14px) !important;
+}
+html body .detail-modal-panel {
+  background: var(--dark-card) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line) !important;
+  border-top: 2px solid var(--ableton-purple) !important;
+  box-shadow: 14px 14px 0 var(--ableton-purple) !important;
+}
+html body .detail-modal-panel :is(h2, .detail-modal-head, .detail-modal-label, .detail-modal-count) {
+  color: var(--ink) !important;
+}
+html body .detail-modal-panel :is(.detail-modal-label, .detail-modal-count) {
+  color: var(--text-soft) !important;
+}
+html body .detail-modal-panel .detail-modal-rule {
+  background: var(--line) !important;
+}
+html body .detail-modal-panel .detail-modal-copy p {
+  color: var(--text-soft) !important;
+}
+html body .detail-modal-panel .detail-modal-close {
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+  border-color: var(--ink) !important;
+}
+html body .detail-modal-panel .detail-modal-close:hover {
+  background: var(--ableton-purple) !important;
+  color: #101010 !important;
+  border-color: var(--ableton-purple) !important;
+}
+
+/* ===== Neo-brutalist accordion (Cursos) — shadcn "accordion" tokens, exact =====
+   --main #88aaee · --bw #212121 (dark) · --border #000 · --shadow 4px 4px 0 #000 · radius 5px */
+body[data-page="curso"] .course-accordion,
+body[data-page="curso"] .faq-list {
+  --main: #88aaee; --bw: #212121; --border: #000; --mtext: #000;
+  --nb-shadow: 4px 4px 0 0 var(--border);
+}
+html body[data-page="curso"] .course-accordion {
+  display: flex; flex-direction: column; gap: 16px !important;
+  flex: none; min-height: 0; max-height: none; overflow: visible; padding-right: 0;
+}
+html body[data-page="curso"] .nb-acc-item {
+  border: 2px solid var(--border); border-radius: 5px; box-shadow: var(--nb-shadow);
+  overflow-x: hidden; background: var(--bw); scroll-margin-top: calc(var(--chrome-height, 74px) + 20px);
+}
+html body[data-page="curso"] .nb-acc-header { margin: 0; display: flex; font: inherit; }
+html body[data-page="curso"] .nb-acc-trigger {
+  display: flex; flex: 1; align-items: center; justify-content: space-between; gap: 16px;
+  width: 100%; padding: 16px; margin: 0; border: 0; border-radius: 0; cursor: pointer; text-align: left;
+  background: var(--main) !important; color: var(--mtext) !important;
+  font-family: inherit; font-weight: 700; font-size: clamp(1rem, 2.2vw, 1.35rem); line-height: 1.25; letter-spacing: -.01em;
+  transition: all .2s;
+}
+html body[data-page="curso"] .nb-acc-trigger:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
+html body[data-page="curso"] .nb-acc-item[data-state="open"] .nb-acc-trigger { border-bottom: 2px solid var(--border); border-radius: 0; }
+html body[data-page="curso"] .nb-acc-label {
+  flex: none; font: 700 12px/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--mtext) !important; opacity: .7;
+}
+html body[data-page="curso"] .nb-acc-title { flex: 1; min-width: 0; color: var(--mtext) !important; }
+html body[data-page="curso"] .nb-acc-chevron { width: 20px; height: 20px; flex: none; color: var(--mtext); transition: transform .2s; }
+html body[data-page="curso"] .nb-acc-item[data-state="open"] .nb-acc-chevron { transform: rotate(180deg); }
+/* accordion-down / accordion-up, 0.2s ease-out */
+html body[data-page="curso"] .nb-acc-content {
+  display: grid; grid-template-rows: 0fr; transition: grid-template-rows .2s ease-out;
+  background: var(--bw); border-radius: 0 0 5px 5px; font-size: 14px;
+}
+html body[data-page="curso"] .nb-acc-item[data-state="open"] .nb-acc-content { grid-template-rows: 1fr; }
+html body[data-page="curso"] .nb-acc-clip { overflow: hidden; min-height: 0; }
+html body[data-page="curso"] .nb-acc-item[data-state="closed"] .nb-acc-clip { visibility: hidden; }
+html body[data-page="curso"] .nb-acc-body { padding: 16px; display: grid; gap: 20px; color: #e6e6e6; }
+html body[data-page="curso"] .nb-acc-body :is(p, small, b, em, li, i) { color: #e6e6e6 !important; }
+html body[data-page="curso"] .nb-acc-summary { margin: 0; font-size: 1.05rem; line-height: 1.5; max-width: 62ch; }
+html body[data-page="curso"] .nb-acc-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+html body[data-page="curso"] .nb-acc-facts > span { display: grid; gap: 6px; padding: 12px; border: 2px solid var(--main); border-radius: 5px; }
+html body[data-page="curso"] .nb-acc-body small { font: 500 11px/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; opacity: .65; }
+html body[data-page="curso"] .nb-acc-facts b { font-weight: 700; font-size: .95rem; }
+html body[data-page="curso"] .nb-acc-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+html body[data-page="curso"] .nb-acc-grid > div { display: grid; align-content: start; gap: 12px; }
+html body[data-page="curso"] .nb-acc-route { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+html body[data-page="curso"] .nb-acc-route li { display: flex; gap: 12px; align-items: baseline; line-height: 1.4; }
+html body[data-page="curso"] .nb-acc-route i { font: 700 12px/1 var(--font-ui); font-style: normal; color: var(--main) !important; }
+html body[data-page="curso"] .nb-acc-grid em { font-style: normal; line-height: 1.5; }
+html body[data-page="curso"] .nb-acc-longform { display: grid; gap: 12px; max-width: 70ch; }
+html body[data-page="curso"] .nb-acc-longform p { margin: 0; line-height: 1.6; opacity: .85; }
+@media (max-width: 720px) {
+  html body[data-page="curso"] .nb-acc-facts, html body[data-page="curso"] .nb-acc-grid { grid-template-columns: 1fr; }
+  html body[data-page="curso"] .nb-acc-trigger { padding: 14px 12px; flex-wrap: wrap; }
+  html body[data-page="curso"] .nb-acc-label { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body[data-page="curso"] .nb-acc-content, html body[data-page="curso"] .nb-acc-chevron { transition: none; }
+}
+
+/* FAQ en Cursos: mismo desplegable */
+html body[data-page="curso"] .faq-list { display: grid; gap: 16px; max-width: 900px; }
+html body[data-page="curso"] .faq-list details {
+  padding: 0; border: 2px solid var(--border) !important; border-radius: 5px; box-shadow: var(--nb-shadow);
+  overflow: hidden; background: var(--bw);
+}
+html body[data-page="curso"] .faq-list summary {
+  padding: 16px; min-height: 0; cursor: pointer; background: var(--main) !important; color: var(--mtext) !important;
+  font-family: inherit; font-weight: 700; font-size: 1rem; line-height: 1.3; letter-spacing: 0;
+}
+html body[data-page="curso"] .faq-list details[open] summary { border-bottom: 2px solid var(--border); }
+html body[data-page="curso"] .faq-list summary::after,
+html body[data-page="curso"] .faq-list details[open] summary::after {
+  content: ""; width: 20px; height: 20px; flex: none; background: var(--mtext);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition: transform .2s;
+}
+html body[data-page="curso"] .faq-list details[open] summary::after { transform: rotate(180deg); }
+html body[data-page="curso"] .faq-list details p { margin: 0; padding: 16px; max-width: none; font-size: 14px; color: #e6e6e6 !important; background: var(--bw); }
+
+
+html body[data-page="index"] section.testimonials { display: block !important; padding-inline: 0 !important; }
+
+/* Acordeón: colores originales de cada programa sobre el diseño neo-brutalista */
+html body[data-page="curso"] .nb-acc-item:nth-child(1) { --main: #8dbbff; --mtext: #101010; }
+html body[data-page="curso"] .nb-acc-item:nth-child(2) { --main: #d8d9ff; --mtext: #101010; }
+html body[data-page="curso"] .nb-acc-item:nth-child(3) { --main: #ff8a5c; --mtext: #101010; }
+html body[data-page="curso"] .nb-acc-item:nth-child(4) { --main: #7657ff; --mtext: #ffffff; }
+html body[data-page="curso"] .nb-acc-item:nth-child(5) { --main: #ffb7d5; --mtext: #101010; }
+
+/* Testimonios: más compactos */
+html body[data-page="index"] section.testimonials { min-height: 0 !important; padding: clamp(40px, 6vw, 72px) 0 !important; }
+html body[data-page="index"] .testimonials .section-head { margin-bottom: 0; }
+html body[data-page="index"] .testimonials .section-head h2 { font-size: clamp(2rem, 4.5vw, 3.4rem) !important; line-height: 1; }
+
+/* Cursos: texto oscuro en cabecera y panel; el panel toma el color del programa */
+html body[data-page="curso"] .nb-acc-item:nth-child(n) { --mtext: #101010; }
+html body[data-page="curso"] .nb-acc-content { background: var(--main); }
+html body[data-page="curso"] .nb-acc-body,
+html body[data-page="curso"] .nb-acc-body :is(p, small, b, em, li, i),
+html body[data-page="curso"] .nb-acc-route i { color: #101010 !important; }
+html body[data-page="curso"] .nb-acc-facts > span { border-color: #101010; }
+html body[data-page="curso"] .nb-acc-longform p { opacity: 1; }
+
+/* FAQ "Antes de empezar": texto blanco, sin recuadro */
+html body[data-page="curso"] .faq-list { gap: 0; }
+html body[data-page="curso"] .faq-list details {
+  border: 0 !important; border-radius: 0; box-shadow: none; background: transparent; overflow: visible; padding: 0;
+}
+html body[data-page="curso"] .faq-list summary {
+  background: transparent !important; color: #fff !important; padding: 20px 0;
+}
+html body[data-page="curso"] .faq-list details[open] summary { border-bottom: 0; }
+html body[data-page="curso"] .faq-list summary::after,
+html body[data-page="curso"] .faq-list details[open] summary::after { background: #fff; }
+html body[data-page="curso"] .faq-list details p { background: transparent; color: #fff !important; padding: 0 0 20px; font-size: 1rem; }
+
+/* Acordeón de programas: todo el texto interior en negro */
+html body[data-page="curso"] .nb-acc-item .nb-acc-content,
+html body[data-page="curso"] .nb-acc-item .nb-acc-content * { color: #000 !important; opacity: 1 !important; }
+html body[data-page="curso"] .nb-acc-item .nb-acc-trigger,
+html body[data-page="curso"] .nb-acc-item .nb-acc-trigger * { color: #000 !important; }
+html body[data-page="curso"] .nb-acc-facts > span { border-color: #000; }
+
+/* Testimonios: marquee de tarjetas, dos filas en sentidos opuestos */
+.testimonials { overflow: hidden; }
+.tm-marquee { position: relative; margin-top: clamp(24px, 4vw, 40px); overflow: hidden; --gap: 1rem; --duration: 80s; display: grid; gap: var(--gap); }
+.tm-track { display: flex; width: max-content; gap: var(--gap); animation: tm-marquee var(--duration) linear infinite; }
+.tm-track.tm-rev { animation-direction: reverse; }
+.tm-marquee:hover .tm-track, .tm-marquee:focus-within .tm-track { animation-play-state: paused; }
+.tm-group { display: flex; flex: none; gap: var(--gap); }
+.tm-marquee::before, .tm-marquee::after { content: ""; position: absolute; inset-block: 0; width: 18%; z-index: 1; pointer-events: none; }
+.tm-marquee::before { left: 0; background: linear-gradient(to right, var(--paper), transparent); }
+.tm-marquee::after { right: 0; background: linear-gradient(to left, var(--paper), transparent); }
+html body .tm-card {
+  margin: 0; flex: none; width: 280px; display: flex; flex-direction: column; gap: 12px; padding: 18px; text-align: start;
+  border-radius: 8px; border: 1px solid rgba(244,240,232,.08); border-top: 1px solid rgba(244,240,232,.22);
+  background: linear-gradient(to bottom, rgba(244,240,232,.09), rgba(244,240,232,.025)); transition: background .3s;
+}
+html body .tm-card:hover { background: linear-gradient(to bottom, rgba(244,240,232,.13), rgba(244,240,232,.05)); }
+.tm-author { display: flex; align-items: center; gap: 12px; }
+.tm-avatar { width: 38px; height: 38px; flex: none; border-radius: 50%; display: grid; place-items: center; background: #88aaee; color: #000; font: 700 12px/1 var(--font-ui); }
+.tm-card:nth-child(4n+2) .tm-avatar { background: #d8d9ff; }
+.tm-card:nth-child(4n+3) .tm-avatar { background: #ff8a5c; }
+.tm-card:nth-child(4n) .tm-avatar { background: #a7e8b0; }
+html body .tm-name { font-size: .92rem; font-weight: 600; line-height: 1.1; color: var(--ink) !important; }
+html body .tm-handle { display: block; margin-top: 3px; font-size: .75rem; color: var(--muted) !important; }
+html body blockquote.tm-text { margin: 0; max-width: none; font-family: inherit; font-weight: 400; font-size: .85rem; line-height: 1.5; letter-spacing: 0; color: var(--text-soft) !important; }
+@keyframes tm-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - var(--gap) / 2)); } }
+@media (max-width: 640px) { html body .tm-card { width: 240px; padding: 14px; } .tm-marquee::before, .tm-marquee::after { width: 10%; } }
+@media (prefers-reduced-motion: reduce) { .tm-marquee { overflow-x: auto; } .tm-track { animation: none; } .tm-group[aria-hidden="true"] { display: none; } }
+
+/* "Una escuela hecha para músicos": mismo desplegable que "Antes de empezar" */
+html body[data-page="index"] .school-faq { display: grid; gap: 0; max-width: none; margin-top: 24px; border-top: 1px solid var(--line); }
+html body[data-page="index"] .school-faq details { padding: 0; border: 0 !important; border-bottom: 1px solid var(--line) !important; border-radius: 0; box-shadow: none; background: transparent; }
+html body[data-page="index"] .school-faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 0; padding: 20px 0; cursor: pointer;
+  background: transparent !important; color: #fff !important;
+  font-family: inherit; font-weight: 700; font-size: 1.15rem; line-height: 1.3; letter-spacing: -.01em;
+}
+html body[data-page="index"] .school-faq summary::after,
+html body[data-page="index"] .school-faq details[open] summary::after {
+  content: ""; width: 20px; height: 20px; flex: none; background: #fff; transition: transform .2s;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+html body[data-page="index"] .school-faq details[open] summary::after { transform: rotate(180deg); }
+html body[data-page="index"] .school-faq details p { margin: 0; padding: 0 0 20px; max-width: none; font-size: 1rem; color: #fff !important; background: transparent; }
+
+/* Testimonios: sin altura mínima de pantalla; más aire arriba, poco abajo */
+html body[data-page="index"] main > section.section.testimonials {
+  min-height: 0 !important; height: auto !important;
+  padding-top: clamp(88px, 11vw, 150px) !important; padding-bottom: clamp(24px, 3vw, 40px) !important;
+}
+
+/* ===== Menú móvil / compacto — port del bloque shadcn "curved-menu", sin animación ===== */
+.cm-toggle, .curved-menu { display: none; }
+@media (max-width: 1100px) {
+  html body .site-header .nav, html body .site-header .nav.open, html body .site-header .menu-toggle { display: none !important; }
+  .cm-toggle {
+    position: relative; flex: none; margin: 0 0 0 auto; width: 48px; height: 48px; padding: 0;
+    display: flex; align-items: center; justify-content: center; border: 0; border-radius: 0; background: #5939e8; cursor: pointer;
+  }
+  .cm-bars { position: relative; width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+  .cm-toggle:hover { background: #7657ff; }
+  .cm-bars span { display: block; height: 4px; width: 28px; background: #fff; transition: transform .3s, opacity .3s; }
+  .cm-toggle.is-active .cm-bars span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .cm-toggle.is-active .cm-bars span:nth-child(2) { opacity: 0; }
+  .cm-toggle.is-active .cm-bars span:nth-child(3) { transform: translateY(-12px) rotate(-45deg); }
+  .cm-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .curved-menu {
+    position: fixed; right: 0; top: var(--cm-top, 64px); bottom: 0; z-index: 40; display: block; width: min(100vw, 640px);
+    background: #5939e8; color: #fff;
+  }
+  .curved-menu[hidden] { display: none; }
+  .curved-menu .cm-inner { height: 100%; padding-top: 44px; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; }
+  .curved-menu .cm-body { padding: 0 40px; }
+  .curved-menu .cm-list { list-style: none; margin: 0; padding: 0; }
+  .curved-menu .cm-list li { border-bottom: 1px solid rgba(255,255,255,.35); }
+  .curved-menu .cm-link { display: flex; align-items: flex-start; padding: 16px 0; text-transform: uppercase; color: #fff !important; text-decoration: none; }
+  .curved-menu .cm-num, .curved-menu .cm-word { font-size: 36px; line-height: 1.1; font-weight: 200; color: #fff !important; }
+  .curved-menu .cm-num { margin-right: 8px; }
+  .curved-menu .cm-link[aria-current="page"] .cm-word { font-weight: 500; }
+  .curved-menu .cm-link:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .curved-menu .cm-footer { display: flex; justify-content: space-between; padding: 20px 40px; font-size: 14px; }
+  .curved-menu .cm-footer a { color: #fff !important; display: grid; place-items: center; width: 40px; height: 40px; }
+}
+@media (min-width: 768px) and (max-width: 1100px) { .curved-menu .cm-body, .curved-menu .cm-footer { padding-inline: 96px; } .curved-menu .cm-link { padding-block: 32px; } }
+@media (prefers-reduced-motion: reduce) { .cm-bars span { transition: none; } }
+
+/* Inicio: "Personas detrás del sonido" un poco más abajo */
+html body[data-page="index"] .team-bento { --team-lift: clamp(32px, 5vw, 64px); }
+html body[data-page="index"] .team-bento .section-head { margin-top: var(--team-lift); }
+/* la altura extra se resta del bento para que la sección siga cabiendo en pantalla (snap) */
+@media (min-width: 681px) {
+  html body[data-page="index"] .team-bento .faculty-bento { height: calc(clamp(360px, calc(100svh - 420px), 620px) - var(--team-lift)) !important; }
+}
+
+/* ===== Inicio · "Play desde el aula": reproductor a pantalla completa ===== */
+html body[data-page="index"] main > section#live {
+  display: block !important; min-height: 0 !important; height: auto !important; padding: 0 !important;
+  background: #000 !important; background-image: none !important; border-top: 0 !important; border-bottom: 0 !important;
+}
+html body[data-page="index"] main > section#live > .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+html body[data-page="index"] #live .live-stage {
+  --ls-h: max(520px, calc(100svh - var(--chrome-height, 75px)));
+  position: relative; isolation: isolate; width: 100%; height: var(--ls-h); min-height: 0 !important; max-height: none;
+  margin: 0; border: 0; overflow: hidden; background: #000;
+}
+html body[data-page="index"] #live .live-stage-player { position: absolute; inset: 0; background: #000; overflow: hidden; }
+html body[data-page="index"] #live .live-stage-player::after { display: none !important; }
+html body[data-page="index"] #live .live-stage-player .live-frame { position: absolute; inset: 0; height: 100%; min-height: 0 !important; border: 0; box-shadow: none; background: #000 !important; }
+html body[data-page="index"] #live .live-stage-player .live-frame::before,
+html body[data-page="index"] #live .live-stage-player .live-frame::after { display: none !important; }
+/* el vídeo cubre toda la pantalla (como object-fit: cover) */
+html body[data-page="index"] #live .live-stage-player iframe.live-video {
+  position: absolute; top: 50%; left: 50%; border: 0; pointer-events: none;
+  width: max(100vw, calc(var(--ls-h) * 16 / 9)); height: max(var(--ls-h), calc(100vw * 9 / 16));
+  transform: translate(-50%, -50%);
+}
+html body[data-page="index"] #live .live-stage-player video.live-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* una sola capa de contraste: legibilidad sin tapar el vídeo */
+html body[data-page="index"] #live .ls-scrim {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.62) 28%, rgba(0,0,0,0) 62%),
+    linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 55%);
+}
+html body[data-page="index"] #live .ls-copy {
+  position: absolute; z-index: 3; left: var(--gutter, clamp(20px, 4vw, 56px)); bottom: clamp(28px, 6vh, 72px);
+  max-width: min(760px, calc(100% - 2 * var(--gutter, 24px))); display: grid; gap: 16px;
+}
+html body[data-page="index"] #live .ls-label { font: 500 12px/1 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: #b6ffc0 !important; }
+html body[data-page="index"] #live .ls-copy h2 { margin: 0; font-size: clamp(2.8rem, 8vw, 7.5rem); line-height: .92; letter-spacing: -.045em; color: #fff !important; }
+html body[data-page="index"] #live .ls-copy p { margin: 0; max-width: 46ch; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.45; color: rgba(255,255,255,.88) !important; }
+html body[data-page="index"] #live .ls-actions {
+  position: absolute; z-index: 3; right: var(--gutter, clamp(20px, 4vw, 56px)); bottom: clamp(28px, 6vh, 72px);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 16px;
+}
+html body[data-page="index"] #live .ls-actions .button { color: #000 !important; }
+@media (max-width: 760px) {
+  html body[data-page="index"] #live .ls-actions { left: var(--gutter, 20px); right: auto; align-items: flex-start; bottom: 20px; }
+  html body[data-page="index"] #live .ls-copy { bottom: 92px; gap: 12px; }
+  html body[data-page="index"] #live .ls-copy p { font-size: .95rem; }
+}

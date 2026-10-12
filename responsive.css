@@ -1,0 +1,324 @@
+/* Responsive and typography contract. Loaded once, after the legacy art direction.
+   Three roles, two families: Archivo (headings/body), DM Mono (navigation/labels).
+   Breakpoints: 680 phone, 1100 compact navigation/tablet, 1440 large desktop. */
+:root { --gutter: clamp(16px, 3vw, 48px); --chrome-height: 74px; }
+html { font-family: var(--font-body); scroll-snap-type: none !important; scroll-padding-top: var(--chrome-height) !important; }
+body { line-height: 1.5; }
+:is(h1, h2, h3, .display) { font-family: var(--font-heading); text-wrap: balance; }
+body :is(h1, .display) { letter-spacing: -.04em; line-height: .98; }
+body h2 { letter-spacing: -.04em; line-height: 1.04; }
+body h3 { letter-spacing: -.035em; line-height: 1.12; }
+p { text-wrap: pretty; }
+body :is(.text-large, .hero-sub, .page-hero p) { line-height: 1.5; }
+body :is(.label, .eyebrow, .module-index, .step-num, .article-open) { line-height: 1.4; letter-spacing: .06em; }
+:is(img, video, iframe) { max-width: 100%; }
+:is(.container, .split, .section-head, .contact-grid, .form, .course-grid, .faculty-bento, .news-index-grid, .course-selector-shell) > * { min-width: 0; }
+:is(.contact-item, .footer-links) a { overflow-wrap: anywhere; }
+:where([id], a, button, summary, input, textarea, select) { scroll-margin-top: calc(var(--chrome-height) + 20px); }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.button { white-space: normal; text-align: center; line-height: 1.35; padding-block: 12px; }
+.skip-link { position: fixed; left: 16px; top: 8px; z-index: 2000; padding: 12px 20px; background: #101010; color: #fff; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+html:not(.js) .reveal { opacity: 1 !important; transform: none !important; }
+
+/* Full-screen chapters. Only the final invitation and footer use compact heights. */
+html body[data-page] main > section:is(.hero, .section, .page-hero):not(.closing-section) {
+  height: auto !important;
+  max-height: none !important;
+  min-height: calc(100svh - var(--chrome-height)) !important;
+  scroll-margin-top: 0 !important;
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+body[data-page] main > .section {
+  padding-block: clamp(32px, 5svh, 64px) !important;
+  overflow: visible !important;
+}
+body[data-page] main > :is(.section, .page-hero, .cta) > .container {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+}
+body[data-page] main > .page-hero {
+  padding-block: clamp(80px, 12vw, 160px) !important;
+}
+html body[data-page] main > .closing-section {
+  height: auto !important; min-height: 0 !important; max-height: none !important;
+  padding-block: clamp(80px, 10vw, 144px) !important;
+}
+body[data-page] main > .section > .container,
+body[data-page] main > .page-hero > .container,
+body[data-page] main > .cta > .container,
+.hero-inner { width: min(var(--max), calc(100% - var(--gutter) * 2)) !important; margin-inline: auto; }
+body[data-page] main > .hero { height: auto !important; min-height: calc(100svh - var(--chrome-height)) !important; }
+.hero-copy { padding-block: clamp(64px, 10vw, 144px) !important; }
+.section-head { align-items: start; }
+.section-head h2 { max-width: 15ch; }
+body[data-page="index"] .school-bento > .container.split { height: auto !important; }
+body[data-page="index"] .school-bento > .tech-ticker { width: min(var(--max), calc(100% - var(--gutter) * 2)) !important; }
+body[data-page="curso"] .course-selector-shell.has-open-course .course-accordion-item.is-open { position: relative !important; top: auto !important; }
+body[data-page="curso"] .course-selector-shell.has-open-course .section-head { display: flex !important; }
+body[data-page="curso"] .course-accordion-item .course-accordion-main strong { letter-spacing: -.035em !important; line-height: 1.12 !important; }
+body[data-page="curso"] :is(.course-accordion-summary, .course-accordion-longform p, .course-accordion-detail-grid em) { font-size: 1rem; line-height: 1.55; }
+body[data-page="curso"] .course-accordion-longform { max-height: none !important; overflow: visible !important; }
+body[data-page="curso"] .course-accordion-item:not(.is-open) .course-accordion-description { visibility: hidden !important; }
+body[data-page="curso"] .course-accordion-item.is-open .course-accordion-description { visibility: visible !important; }
+
+/* Keep the supplied mark centred independently from navigation geometry. */
+.site-header .header-inner { display: flex !important; align-items: center !important; justify-content: space-between; gap: 24px; width: calc(100% - var(--gutter) * 2) !important; max-width: 1600px; height: var(--chrome-height) !important; }
+.site-header .brand { position: static !important; display: flex !important; align-items: center !important; justify-content: center !important; flex: 0 0 150px; width: 150px !important; height: 44px !important; padding: 0 !important; transform: none !important; }
+.site-header .brand img { display: block; width: 100% !important; height: auto; max-height: 40px; object-fit: contain; }
+.site-header .nav { position: static; transform: none; margin: 0; flex-shrink: 0; }
+.site-header .nav-link { white-space: nowrap; }
+.site-header .menu-toggle { font-family: var(--font-ui); }
+.reading-progress { top: var(--chrome-height); }
+
+/* A footer that remains reachable by scroll, touch and keyboard on every screen. */
+.footer.static-footer,
+.footer.static-footer.is-open {
+  position: relative !important; inset: auto !important; z-index: 1 !important;
+  width: 100% !important; height: auto !important; min-height: 0 !important; max-height: none !important;
+  overflow: visible !important; transform: none !important; visibility: visible !important;
+  pointer-events: auto !important; box-shadow: none !important; border: 0 !important;
+}
+.footer.static-footer > .container { width: min(var(--max), calc(100% - var(--gutter) * 2)) !important; height: auto !important; padding-block: 48px 24px !important; }
+.footer.static-footer .footer-top { grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 24px; }
+.footer.static-footer .brand { height: auto !important; width: auto !important; padding: 0 !important; align-items: start; }
+.footer.static-footer .footer-links { gap: 0 !important; font-size: 1rem !important; line-height: 1.5 !important; }
+.footer.static-footer .footer-links a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; }
+.footer.static-footer .footer-links span { display: block; padding-block: 8px; }
+.footer.static-footer .footer-contact-link { min-height: 48px !important; }
+.footer.static-footer .footer-bottom { display: flex !important; flex-wrap: wrap; gap: 20px; justify-content: space-between; margin-top: 32px; }
+.footer.static-footer h3 { line-height: 1.4 !important; font-size: 12px !important; }
+.footer.static-footer .scroll-top { display: block !important; min-height: 44px; }
+
+/* Dialog readers: the close action stays available while the article scrolls. */
+:is(.detail-modal, .article-modal) { z-index: 1200; padding: clamp(12px, 3vw, 32px); }
+:is(.detail-modal-panel, .article-reader) { overscroll-behavior: contain; max-height: calc(100dvh - 64px); padding: 24px clamp(20px, 4vw, 64px) 40px; }
+:is(.detail-modal-close, .article-reader-close) { position: sticky; display: grid; place-items: center; top: 0; margin-left: auto; margin-bottom: 20px; z-index: 5; width: 48px; height: 48px; min-height: 48px; background: #f6f4ed; }
+:is(.detail-modal-head, .article-reader-head) { padding-right: 0; flex-wrap: wrap; }
+:is(.detail-modal-panel h2, .article-reader-title) { font-size: clamp(2rem, 5vw, 4.5rem) !important; line-height: 1.08 !important; letter-spacing: -.04em !important; overflow-wrap: anywhere; }
+:is(.detail-modal-copy, .article-reader-body) p { line-height: 1.65; }
+.field :is(input, textarea, select) { width: 100%; min-width: 0; min-height: 48px; font-size: 1rem; }
+.field textarea { resize: vertical; }
+summary { min-height: 48px; padding-right: 32px; line-height: 1.4; }
+summary::after { flex-shrink: 0; }
+.tech-ticker:hover .tech-ticker-track, .tech-ticker:focus-within .tech-ticker-track { animation-play-state: paused; }
+
+@media (max-width: 1100px) {
+  :root { --chrome-height: 64px; }
+  .site-header { height: var(--chrome-height); backdrop-filter: none; }
+  .site-header .brand { flex-basis: 132px; width: 132px !important; }
+  .site-header .menu-toggle { display: grid !important; place-items: center; width: 76px; min-width: 76px; height: 44px; padding: 0; margin-left: auto; background: transparent; border: 1px solid rgba(16,16,16,.35); color: #101010; font-size: 0; }
+  .site-header .menu-toggle::after { content: 'MENÚ'; font: 500 12px/1 var(--font-ui); }
+  .site-header .menu-toggle[aria-expanded="true"]::after { content: 'CERRAR'; }
+  .site-header .nav, .site-header .nav.open {
+    position: fixed !important; inset: var(--chrome-height) 0 auto !important; z-index: 60;
+    display: none !important; flex-direction: column; align-items: stretch; justify-content: flex-start;
+    width: 100%; height: calc(100dvh - var(--chrome-height)); max-height: none;
+    padding: 16px var(--gutter) max(24px, env(safe-area-inset-bottom));
+    gap: 0; overflow-y: auto; overscroll-behavior: contain; border: 0; background: var(--ableton-paper) !important;
+  }
+  .site-header .nav.open { display: flex !important; }
+  .site-header .nav-link { flex: 0 0 auto; width: 100%; height: auto; min-height: 54px; padding: 16px 0 !important; border: 0; border-bottom: 1px solid var(--ableton-border); font: 500 16px/1.4 var(--font-ui); }
+  .site-header .nav-link::after { left: 0; bottom: 0; }
+  .site-header .nav-link.active::after { right: 0; }
+  .site-header .nav-cta { flex: 0 0 auto; width: 100%; min-height: 52px; justify-content: center; margin: 20px 0 0; font: 500 14px/1.4 var(--font-ui); }
+  .section-head { gap: 28px; }
+  body[data-page="index"] .team-bento .faculty-bento,
+  .faculty-bento { height: auto !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; grid-template-rows: auto !important; }
+  .faculty-bento-card { min-height: 0; }
+  .faculty-bento-image { min-height: 240px; }
+  .steps, .quote-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; grid-template-rows: auto !important; }
+  .course-grid > * { grid-column: auto !important; grid-row: auto !important; }
+  .contact-grid, .split, .upo-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 36px !important; }
+  .school-bento .split-art { height: 380px !important; }
+  body[data-page="curso"] .course-selector-shell { grid-template-columns: minmax(0, 1fr) !important; gap: 28px !important; }
+  body[data-page="curso"] .course-selector-shell .info-panel { position: relative !important; top: auto !important; }
+  .news-index-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; }
+  .article-card { grid-column: auto; grid-row: auto; min-height: 250px; }
+  .article-card-featured { grid-column: 1 / -1; min-height: 380px; }
+  .footer.static-footer .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 680px) {
+  body :is(.display, h1) { font-size: clamp(2.7rem, 11.8vw, 4.6rem) !important; line-height: 1.02 !important; letter-spacing: -.04em !important; overflow-wrap: normal; }
+  body h2 { font-size: clamp(2rem, 8.5vw, 3.4rem) !important; line-height: 1.08 !important; letter-spacing: -.04em !important; }
+  body h3 { line-height: 1.15 !important; }
+  body[data-page] main > .page-hero { padding-block: 80px 48px !important; }
+  .hero-inner { align-items: flex-end; }
+  .hero-copy { padding: 80px 0 32px !important; }
+  body .hero-sub { margin-block: 24px; }
+  body .section-head h2 { max-width: 17ch; }
+  .section-head > div:last-child { padding-top: 0; }
+  .hero-actions { gap: 12px; }
+  .button { min-height: 52px; }
+  .course-grid, .quote-grid, .steps,
+  body[data-page="index"] .team-bento .faculty-bento,
+  .faculty-bento, .news-index-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .article-card { min-height: 220px; padding: 24px; }
+  .article-card-featured { min-height: 360px; }
+  .article-card h3 { margin-top: 44px; font-size: 1.65rem; }
+  .article-card p, .course-card p, .faculty-bento-copy p, .step p, .feature-row p { font-size: 1rem !important; line-height: 1.5 !important; }
+  .faculty-bento-image { min-height: 280px; }
+  .team-filet { flex-direction: column; align-items: stretch; gap: 16px; }
+  .team-filet .button { width: 100%; }
+  .school-bento .split-art { height: 300px !important; }
+  body[data-page="curso"] .course-accordion-item { padding: 20px 16px !important; }
+  body[data-page="curso"] .course-accordion-item :is(.course-accordion-label, .course-accordion-main > strong) { padding-right: 52px !important; }
+  body[data-page="curso"] .course-accordion-item .course-accordion-main strong { font-size: clamp(1.25rem, 5.5vw, 1.65rem) !important; }
+  body[data-page="curso"] .course-accordion-item .course-accordion-label { font-size: 12px !important; }
+  body[data-page="curso"] .course-accordion-item .course-accordion-description { color: inherit !important; }
+  body[data-page="curso"] .course-accordion-item:nth-child(4) :is(.course-accordion-main, .course-accordion-main > strong, .course-accordion-label, .course-accordion-description) { color: #fff !important; }
+  .live-stage-top { grid-template-columns: minmax(0, 1fr) !important; }
+  .live-stage-filet { min-width: 0; }
+  .footer.static-footer .footer-top > :first-child { grid-column: 1 / -1; }
+  .footer.static-footer .footer-top > :nth-child(3) { grid-column: 1 / -1; }
+  .footer.static-footer .footer-top { gap: 28px 16px !important; }
+  .footer.static-footer .footer-top::before { display: none; }
+  .footer.static-footer .footer-top > :first-child p { font-size: 1rem !important; line-height: 1.5 !important; }
+  .footer.static-footer .footer-bottom { font-size: 11px !important; }
+  .detail-modal-panel, .article-reader { max-height: calc(100dvh - 32px); padding: 16px 20px 28px; box-shadow: 4px 4px 0 var(--ableton-purple); }
+  .detail-modal-panel h2, .article-reader-title { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
+}
+
+@media (max-height: 600px) {
+  .hero-copy { padding-block: 48px !important; }
+  body[data-page="curso"] .course-selector-shell .info-panel { position: relative !important; top: auto !important; }
+}
+@media (hover: none) {
+  .button:hover, .course-card:hover, .article-card:hover, .journal-card:hover { transform: none; box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .blur-word { opacity: 1 !important; filter: none !important; transform: none !important; }
+}
+
+/* Media sections reserve their own frame after removing viewport height locks. */
+body[data-page] main > .live-cinema { padding: 0 !important; background: #050505 !important; }
+body[data-page] main > .live-cinema > .container { width: 100% !important; }
+.live-cinema .section-head { position: relative; inset: auto; width: 100%; margin: 0 !important; padding: 48px var(--gutter) 32px; }
+.live-cinema .section-head > div:last-child { margin-left: 0; }
+.live-cinema .live-grid, .live-cinema .live-card-featured { height: auto !important; }
+.live-cinema .live-card-featured { padding: 0 !important; }
+.live-cinema .live-card-featured .live-frame { height: clamp(260px, 56.25vw, 740px) !important; min-height: 0 !important; }
+.live-cinema .live-card-featured .live-card-meta { position: relative; inset: auto; padding: 24px var(--gutter) 40px; }
+body[data-page="index"] main > #live { padding: 0 !important; }
+body[data-page="index"] main > #live > .container { width: 100% !important; }
+
+@media (max-width: 1100px) {
+  .faculty-bento .faculty-bento-card { grid-column: auto !important; grid-row: auto !important; min-height: 0; grid-template-rows: auto auto; }
+  .faculty-bento .faculty-bento-image { height: 300px; min-height: 0 !important; }
+  .live-cinema .section-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+@media (max-width: 680px) {
+  body[data-page="curso"] .course-accordion-item,
+  body[data-page="curso"] .course-accordion-item.is-open { padding: 20px 16px !important; }
+  body[data-page="index"] main > #live .live-stage { min-height: 680px !important; }
+  .live-cinema .section-head { display: block; }
+}
+
+/* Constrain the decorative glow itself instead of masking page overflow. */
+.hero::before { right: 0; width: min(680px, 100%); height: auto; aspect-ratio: 1; }
+
+@media (max-width: 1100px) {
+  body[data-page="escuela"] .split-art {
+    width: 100%; height: clamp(280px, 48vw, 480px) !important;
+    min-height: 0 !important; margin: 0 !important;
+  }
+}
+@media (max-width: 860px) {
+  .section-head { display: block !important; }
+  .section-head > div:last-child { max-width: none; margin-top: 20px; }
+}
+@media (max-width: 680px) {
+  .footer.static-footer .footer-top > :first-child { grid-row: 1; }
+  .footer.static-footer .footer-top > :nth-child(2) { grid-column: 1; grid-row: 2; }
+  .footer.static-footer .footer-top > :nth-child(4) { grid-column: 2; grid-row: 2; }
+  .footer.static-footer .footer-top > :nth-child(3) { grid-row: 3; }
+}
+
+/* Desktop chapters fit the viewport; dense content keeps its natural height
+   on smaller screens and when readers enlarge text. */
+@media (min-width: 1101px) {
+  body[data-page="index"] main > .section,
+  body[data-page="index"] main > #cursos { padding-block: 32px !important; }
+  body[data-page="index"] .team-bento .faculty-bento { height: clamp(360px, calc(100svh - 420px), 620px); }
+  body[data-page="index"] .testimonials .quote { min-height: 260px; }
+  body[data-page="index"] #escuela-home .feature-row { min-height: 88px; padding-block: 10px !important; gap: 4px 16px !important; }
+  body[data-page="index"] #escuela-home .tech-ticker { min-height: 72px; }
+  body[data-page="escuela"] main > .page-hero { padding-block: 80px !important; }
+  body[data-page="live"] main > .live-cinema { position: relative; padding: 0 !important; }
+  body[data-page="live"] main > .live-cinema > .container { height: calc(100svh - var(--chrome-height)) !important; }
+  body[data-page="live"] .live-cinema .section-head { position: absolute; inset: 7% var(--gutter) auto; width: auto; padding: 0; }
+  body[data-page="live"] .live-cinema .live-grid,
+  body[data-page="live"] .live-cinema .live-card-featured,
+  body[data-page="live"] .live-cinema .live-card-featured .live-frame { height: 100% !important; }
+  body[data-page="live"] .live-cinema .live-card-featured .live-card-meta { position: absolute; inset: auto var(--gutter) 6%; padding: 0; }
+  body[data-page="index"] main > #live { padding: 0 !important; }
+}
+
+/* Partner strip: bottom row of the school chapter, with optically sized
+   logos cropped only to their original transparent bounds. */
+body[data-page="index"] main > #escuela-home.school-bento {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(40px, 5svh, 64px);
+  padding-bottom: 0 !important;
+}
+body[data-page="index"] #escuela-home > .container.split {
+  flex: 1 0 auto;
+  margin-inline: auto;
+}
+body[data-page="index"] #escuela-home > .tech-ticker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  flex: 0 0 auto;
+  gap: 14px;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 150px;
+  margin: auto 0 0 !important;
+  padding: 18px 0 22px;
+  border-bottom: 0;
+  overflow: hidden;
+}
+#escuela-home .tech-ticker-label {
+  display: block;
+  width: min(var(--max), calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+  padding: 0;
+  font: 500 11px/1.5 var(--font-ui);
+  letter-spacing: .08em;
+}
+#escuela-home .tech-ticker-window { width: 100%; min-width: 0; overflow: hidden; }
+#escuela-home .tech-ticker-track { display: flex; width: max-content; gap: 0; animation: tech-marquee 42s linear infinite; }
+#escuela-home .tech-logo-group { display: flex; align-items: center; flex: 0 0 auto; gap: 64px; padding-right: 64px; }
+#escuela-home .tech-logo { display: flex; flex: 0 0 250px; width: 250px; height: 88px; align-items: center; justify-content: center; }
+#escuela-home .tech-logo img { display: block; width: auto; height: auto; max-width: 238px; max-height: 88px; object-fit: contain; opacity: 1; filter: none; mix-blend-mode: multiply; }
+#escuela-home .tech-ticker:hover .tech-ticker-track,
+#escuela-home .tech-ticker:focus-within .tech-ticker-track { animation-play-state: paused; }
+#escuela-home .tech-ticker-window:focus-visible { outline-offset: -3px; }
+@media (min-width: 1101px) {
+  body[data-page="index"] #escuela-home .split h2 { max-width: none; font-size: clamp(2.75rem, 4vw, 4rem); }
+  body[data-page="index"] #escuela-home .split-art { height: clamp(300px, 45svh, 480px) !important; }
+}
+@media (max-width: 680px) {
+  body[data-page="index"] #escuela-home > .tech-ticker { min-height: 140px; padding-block: 18px; }
+  #escuela-home .tech-logo-group { gap: 40px; padding-right: 40px; }
+  #escuela-home .tech-logo { flex-basis: 210px; width: 210px; height: 80px; }
+  #escuela-home .tech-logo img { max-width: 200px; max-height: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #escuela-home .tech-ticker-track { animation: none !important; }
+  #escuela-home .tech-ticker-window { overflow-x: auto; scrollbar-width: thin; }
+  #escuela-home .tech-logo-group[aria-hidden="true"] { display: none; }
+}
+@media (min-width: 1101px) {
+  body[data-page="index"] #escuela-home .split h2 { margin-bottom: 12px; }
+  body[data-page="index"] #escuela-home .feature-row { min-height: 86px; }
+}
